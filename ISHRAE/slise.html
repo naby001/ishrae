@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Slideshow</title>
+    <style>
+       * {box-sizing: border-box;}
+        body {font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f0f0f0;}
+        
+        /* Make the slideshow container cover the entire top portion */
+        .slideshow-container {
+            width: 100%; /* Full width of the viewport */
+            height: 400px; /* Adjust the height as needed */
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden; /* Hide overflow */
+        }
+        
+        .mySlides {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the image covers the entire container */
+            vertical-align: middle;
+        }
+        
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        @-webkit-keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+        
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <img src="1.jpeg" alt="Image 1">
+    </div>
+    <div class="mySlides fade">
+        <img src="2.jpeg" alt="Image 2">
+    </div>
+    <div class="mySlides fade">
+        <img src="3.jpeg" alt="Image 3">
+    </div>
+    <!-- Add more slides as needed -->
+</div>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let slides = document.getElementsByClassName("mySlides");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+</script>
+
+</body>
+</html>
