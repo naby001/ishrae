@@ -36,24 +36,7 @@ header {
   z-index: 1;
 }
 
-ul {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  justify-content: center;
-  align-items: center; 
 
-}
-
-nav ul li {
-  margin-left: 8vh;
-  font-size: 3.5vh;
-  color: rgb(43, 107, 226);
-}
-
-nav ul li:hover {
-  text-decoration: underline;
-}
 
 .boxes {
   margin-top: 5vh;
@@ -359,4 +342,47 @@ h2 {
       .contact-details a:hover {
         text-decoration: underline;
       }
-      
+      body {
+        font-family: Arial, sans-serif;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+  }
+ 
+  #navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333; /* Adjust this as needed */
+    z-index: 1000; /* Keeps the navbar on top of other content */
+}
+
+#navbar nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#navbar nav ul li {
+    display: inline;
+}
+
+#navbar nav ul li a {
+    color: white; /* Adjust text color */
+    text-decoration: none;
+    padding: 10px;
+}
+
+.logo {
+    height: 50px; /* Adjust height as needed */
+    vertical-align: middle;
+}
+
+/* Add some padding to the body to ensure content is not hidden behind the navbar */
+body {
+    padding-top: 70px; /* Adjust according to the navbar height */
+}
